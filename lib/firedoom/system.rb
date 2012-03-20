@@ -8,8 +8,13 @@ module Firedoom
     attr_reader :name
     
     def initialize(world, name)
-      @world = world
-      @name = self.class.sanitize_name(name)
+      @world  = world
+      @name   = self.class.sanitize_name(name)
+      @inert  = false
     end
+    
+    def inert!;   @inert = true;    end
+    def inert?;   !!@inert;         end
+    def active?;  !inert?;          end
   end
 end

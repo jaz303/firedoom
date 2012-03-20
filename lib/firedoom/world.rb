@@ -14,5 +14,9 @@ module Firedoom
       end
       yield @systems[name] if block_given?
     end
+    
+    def active_systems
+      @systems.values.select { |s| s.active? }
+    end
   end
 end

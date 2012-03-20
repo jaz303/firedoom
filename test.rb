@@ -7,7 +7,7 @@ world.system('Phyiscs') do |s|
 end
 
 world.system('Animation') do |s|
-  
+  s.inert!
 end
 
 backend = Firedoom::Backends::JavaBackend.new
